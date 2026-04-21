@@ -1,7 +1,7 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // Note: In this environment, we use process.env.GEMINI_API_KEY directly
-const genAI = new GoogleGenerativeAI(import.meta.env.GEMINI_API_KEY || "");
+const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY || "");
 const model = genAI.getGenerativeModel({ 
   model: "gemini-1.5-flash",
   systemInstruction: `Bạn là "Người bạn đồng hành" - Trung lập, đồng cảm, lắng nghe. 
@@ -13,7 +13,7 @@ Ngôn ngữ: Tiếng Việt.`
 });
 
 export async function getWitnessReflection(stepTitle: string, userInput: string) {
-  if (!import.meta.env.GEMINI_API_KEY || userInput.length < 5) return "Mình đang lắng nghe bạn...";
+  if (!import.meta.env.VITE_GEMINI_API_KEY || userInput.length < 5) return "Mình đang lắng nghe bạn...";
 
   try {
     const prompt = `Người dùng đang ở bước: ${stepTitle}. Họ vừa chia sẻ: "${userInput}". Hãy đưa ra một lời phản chiếu (mirroring) ngắn gọn (dưới 2 câu).`;

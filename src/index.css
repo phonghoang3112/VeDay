@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Noto Serif", ui-serif, Georgia, serif;
+
+  --color-primary: #904d00;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #f88a07;
+  --color-on-primary-container: #5d3000;
+  
+  --color-secondary: #b6086d;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #fd50a4;
+  --color-on-secondary-container: #5c0034;
+
+  --color-tertiary: #6f4e9f;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #b996ee;
+  --color-on-tertiary-container: #4a297a;
+
+  --color-background: #fdfae9;
+  --color-on-background: #1c1c12;
+  
+  --color-surface: #fdfae9;
+  --color-on-surface: #1c1c12;
+  --color-surface-variant: #e6e3d2;
+  --color-on-surface-variant: #564335;
+  
+  --color-outline: #897362;
+  --color-outline-variant: #dcc1ae;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+.sunset-gradient {
+  background: linear-gradient(to right, #f88a07, #fd50a4, #6f4e9f);
+}
+
+.mic-shadow {
+  box-shadow: 0 0 0 0 rgba(248, 138, 7, 0.4);
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}

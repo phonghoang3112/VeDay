@@ -1,0 +1,6 @@
+{
+  "name": "Về đây",
+  "description": "Ứng dụng đồng hành thực hành phương pháp 5 Bước Yêu Mình - Toàn Vẹn International.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": []
+}
